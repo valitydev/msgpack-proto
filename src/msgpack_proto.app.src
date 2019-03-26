@@ -1,0 +1,11 @@
+{application, msgpack_proto, [
+    {description, "Thrift proto for msgpack"},
+    {vsn, "1.0.0"},
+    {applications, [
+        kernel,
+        stdlib
+    ]},
+    {maintainers, [
+        "Sergei Shuvatov <s.shuvatov@rbkmoney.com>"
+    ]}
+]}.
