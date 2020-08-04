@@ -7,16 +7,30 @@
     <parent>
         <groupId>com.rbkmoney</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.5</version>
     </parent>
 
     <groupId>com.rbkmoney</groupId>
     <artifactId>msgpack-proto</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Msgpack</name>
     <description>Generates jar artifact containing compiled thrift classes based on generated thrift IDL files</description>
+    <url>https://github.com/rbkmoney/msgpack-proto.git</url>
+
+    <developers>
+        <developer>
+            <organization>RBK.money</organization>
+            <organizationUrl>https://rbk.money</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/rbkmoney/msgpack-proto.git</connection>
+        <developerConnection>scm:git:ssh://github.com/rbkmoney/msgpack-proto.git</developerConnection>
+        <url>https://github.com/rbkmoney/msgpack-proto/tree/master</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,7 +40,7 @@
         <dependency>
             <groupId>com.rbkmoney.woody</groupId>
             <artifactId>woody-thrift</artifactId>
-            <version>LATEST</version>
+            <version>[1.1.21,)</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -34,23 +48,12 @@
     <build>
         <finalName>${project.artifactId}</finalName>
 
-        <resources>
-            <resource>
-                <directory>${project.basedir}/proto</directory>
-                <targetPath>${project.build.outputDirectory}/proto</targetPath>
-                <includes>
-                    <include>*.thrift</include>
-                </includes>
-                <filtering>false</filtering>
-            </resource>
-        </resources>
-
         <plugins>
             <!-- THRIFT -->
             <plugin>
                 <groupId>org.apache.thrift</groupId>
                 <artifactId>thrift-maven-plugin</artifactId>
-                <version>0.9.3-1</version>
+                <version>0.10.0</version>
                 <configuration>
                     <generator>java:fullcamel</generator>
                     <thriftSourceRoot>${project.basedir}/proto</thriftSourceRoot>
