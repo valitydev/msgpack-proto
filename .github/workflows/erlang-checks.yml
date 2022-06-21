@@ -15,5 +15,7 @@ jobs:
     with:
       otp-version: 24
       rebar-version: 3.18
-      use-thrift: true
       thrift-version: 0.14.2.3
+      use-thrift: true
+      run-eunit: false
+      run-common-test: false
