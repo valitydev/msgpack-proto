@@ -11,7 +11,7 @@ on:
 jobs:
   run:
     name: Run checks
-    uses: valitydev/erlang-workflows/.github/workflows/erlang-simple-build.yml@90fb866254358af5b3037d7a912a7b212d2b3d9b
+    uses: valitydev/erlang-workflows/.github/workflows/erlang-simple-build.yml@e34c6ce0b83099c100b91c3f389fdc6e46a66a5b
     with:
       otp-version: 24
       rebar-version: 3.18
