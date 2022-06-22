@@ -1,4 +1,4 @@
-namespace erlang msgpack
+namespace erlang msgp.msgpack
 namespace java dev.vality.msgpack
 
 /**
